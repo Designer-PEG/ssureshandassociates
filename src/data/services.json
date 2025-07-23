@@ -1,0 +1,72 @@
+[
+  {
+    "id": "1",
+    "icon": "document-report",
+    "title": "Financial Audit & Assurance",
+    "description": "Comprehensive financial audits ensuring accuracy, compliance, and transparency in your financial reporting.",
+    "subDescription": "We conduct detailed audits that go beyond compliance — identifying financial risks, enhancing internal controls, and providing actionable insights that strengthen stakeholder confidence and decision-making capabilities."
+  },
+  {
+    "id": "2",
+    "icon": "office-building",
+    "title": "Corporate Legal Support Solutions",
+    "description": "Expert legal guidance for compliance, contracts, and regulatory matters to protect your business interests.",
+    "subDescription": "Our legal professionals deliver tailored solutions for corporate governance, labor laws, intellectual property, and contract management — ensuring your operations remain secure, compliant, and future-ready in a fast-evolving regulatory landscape."
+  },
+  {
+    "id": "3",
+    "icon": "desktop-computer",
+    "title": "Information System Audit & Digitisation",
+    "description": "Assessment of IT controls, security, and digitization processes to safeguard digital assets and enhance operational efficiency.",
+    "subDescription": "We assess your IT infrastructure for risks and resilience, and help transition from paper to digital systems for improved compliance and streamlined workflows."
+  },
+  {
+    "id": "4",
+    "icon": "badge-check",
+    "title": "Forensic Investigation & Fraud Examination",
+    "description": "Specialized services to uncover financial irregularities, fraud, and misconduct within organizations.",
+    "subDescription": "Our expert investigators use forensic tools and root cause analysis to detect fraud, recommend preventive controls, and support legal proceedings when necessary."
+  },
+  {
+    "id": "5",
+    "icon": "book-open",
+    "title": "Corporate Misreporting & Trainings",
+    "description": "Identification and rectification of financial misreporting with comprehensive training programs.",
+    "subDescription": "We deliver diagnostics and workshops focused on ethics, internal control procedures, and financial accuracy — empowering your team to prevent misreporting, adhere to regulatory standards, and foster a culture of accountability."
+  },
+  {
+    "id": "6",
+    "icon": "currency-dollar",
+    "title": "Tax & Accounting Advisory",
+    "description": "Navigate complex tax environments with ease through expert advisory services tailored to your needs.",
+    "subDescription": "We help individuals and businesses stay compliant, reduce tax liabilities, and develop robust accounting strategies through planning, filing, and representation services."
+  },
+  {
+    "id": "7",
+    "icon": "heart-pulse",
+    "title": "Business Health Check-Up",
+    "description": "Evaluate the financial and operational fitness of your business with our diagnostic framework.",
+    "subDescription": "Our check-ups analyze cash flow, compliance gaps, profitability, and KPI trends — helping you mitigate risks and unlock sustainable growth opportunities."
+  },
+  {
+    "id": "8",
+    "icon": "trending-up",
+    "title": "Start-Up, Scale-Up & Growth Advisory",
+    "description": "Support for entrepreneurs at every stage — from formation to funding and beyond.",
+    "subDescription": "We assist in entity structuring, business planning, budgeting, valuation, and investor readiness — helping you scale confidently and strategically."
+  },
+  {
+    "id": "9",
+    "icon": "chart-bar",
+    "title": "Investment Solutions Advisory",
+    "description": "Tailored guidance to help individuals and businesses make sound investment decisions.",
+    "subDescription": "We offer portfolio design, risk profiling, and investment planning to balance returns, safety, and tax efficiency based on your financial goals."
+  },
+  {
+    "id": "10",
+    "icon": "database",
+    "title": "Business Valuations, Mergers & Acquisitions",
+    "description": "Accurate valuations and end-to-end support for mergers, acquisitions, and corporate restructuring.",
+    "subDescription": "Our experts provide due diligence, transaction support, post-merger integration, and fair market value assessments to enable informed deal-making."
+  }
+]
