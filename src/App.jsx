@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Services from './pages/Services.jsx';
 import Contact from './pages/Contact';
+import NotFound from './pages/NotFound';
 import ScrollToTop from './components/ScrollToTop';
 import './index.css';
 
@@ -16,13 +17,15 @@ function App() {
         <ScrollToTop />
         <Header />
         <main className="flex-grow">
-          <AnimatePresence mode='wait'>
+          <AnimatePresence mode="wait">
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
               <Route path="/services" element={<Services />} />
               <Route path="/services/:id" element={<Services />} />
               <Route path="/contact" element={<Contact />} />
+              {/* Catch-all route for 404 */}
+              <Route path="*" element={<NotFound />} />
             </Routes>
           </AnimatePresence>
         </main>
