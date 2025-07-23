@@ -257,7 +257,7 @@ export default function AboutUs() {
           {/* Text content */}
           <div className="mt-6 text-center w-full">
             <h3 className="text-2xl font-medium text-gray-900 transition-all duration-300 group-hover:text-indigo-700">
-              Suresh Sharma
+              CA. Suresh Sharma
             </h3>
             <p className="text-lg text-gray-500 mt-2 transition-all duration-300 group-hover:text-indigo-600">
               Founder & Managing Partner
@@ -295,8 +295,8 @@ export default function AboutUs() {
                     alt="Damodhar Paudel"
                   />
                 </div>
-                <h3 className="mt-6 text-xl font-medium text-gray-900 transition-all duration-300 hover:text-indigo-700">Damodhar Paudel</h3>
-                <p className="text-lg text-gray-500 mt-2 transition-all duration-300 hover:text-indigo-600">Head Officer/Director & Managing Partner</p>
+                <h3 className="mt-6 text-xl font-medium text-gray-900 transition-all duration-300 hover:text-indigo-700">Damodar Paudel</h3>
+                <p className="text-lg text-gray-500 mt-2 transition-all duration-300 hover:text-indigo-600">Head of Operation</p>
                 <p className="mt-4 text-base text-gray-600 transition-all duration-300 hover:text-gray-700">
                   Specializes in corporate taxation and audit with 10+ years of experience across multiple industries.
                 </p>
