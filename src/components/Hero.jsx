@@ -29,7 +29,7 @@ const Hero = () => {
               <span className='text-neutral-300'>& Associates</span>
             </h1>
             <p className="text-xl md:text-2xl text-purple-200">
-              Providing service over a decade.
+              A Responsible & Proficient Management Consultant.
             </p>
             <div className="pt-4">
               <Link 
