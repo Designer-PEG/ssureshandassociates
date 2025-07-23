@@ -11,7 +11,7 @@ import './index.css';
 
 function App() {
   return (
-    <Router basename="/sureshandassociates">
+    <Router basename="/">
       <div className="min-h-screen flex flex-col">
         <ScrollToTop />
         <Header />
