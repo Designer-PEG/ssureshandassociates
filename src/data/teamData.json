@@ -1,0 +1,45 @@
+[
+  {
+    "name": "CA. Suresh Sharma",
+    "position": "Founder & Managing Partner",
+    "image": "Suresh.png",
+    "description": "With over 10+ years of experience, CEO Suresh leads our firm with a commitment to excellence in audit and advisory services, ensuring our clients achieve their financial goals.",
+    "isLeadership": true
+  },
+  {
+    "name": "Damodar Paudel",
+    "position": "Head of Operation",
+    "image": "Damodar.png",
+    "description": "Specializes in corporate taxation and audit with 10+ years of experience across multiple industries."
+  },
+  {
+    "name": "Shashank Shrestha",
+    "position": "Audit & Compliance Officer",
+    "image": "Shashank.jpg",
+    "description": "Oversees all audit engagements with a focus on risk management and compliance."
+  },
+  {
+    "name": "Jeshan Neupane",
+    "position": "Audit & Compliance Officer",
+    "image": "Jeshan.png",
+    "description": "Oversees all audit engagements with a focus on risk management and compliance."
+  },
+  {
+    "name": "Bibek Shahi",
+    "position": "Audit Officer",
+    "image": "Bibek.jpg",
+    "description": "Provides expert guidance on tax planning and compliance for individuals and businesses."
+  },
+  {
+    "name": "Pujan Joshi",
+    "position": "IT & Software Designer",
+    "image": "Pujan.png",
+    "description": "Specializes in digital transformation and IT systems."
+  },
+  {
+    "name": "Prakash Chaulagai",
+    "position": "Audit & Compliance Officer",
+    "image": "Prakash.jpg",
+    "description": "Focuses on internal audits and compliance to ensure regulatory adherence."
+  }
+]

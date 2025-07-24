@@ -91,7 +91,7 @@ const CTASection = () => {
     try {
       // Send to Google Apps Script
       await fetch(
-        'https://script.google.com/macros/s/AKfycbwu_nfGT_kgGw87lICkuSaZUYJih6pBOyigVnriLDLv-vQ3NzNlnSLUbRxIn_3Km99v/exec', 
+        'https://script.google.com/macros/s/AKfycbx_EpZLawq48T5aAC8nl3qy_NIlCs0zWaQyGtZotziClOyKlpR0oHcUMsAeb76xhdKu/exec', 
         {
           method: 'POST',
           mode: 'no-cors',

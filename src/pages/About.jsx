@@ -1,15 +1,41 @@
-import { BuildingOfficeIcon, ScaleIcon, ChartBarIcon, ShieldCheckIcon, LightBulbIcon, ArrowTrendingUpIcon } from '@heroicons/react/24/outline';
-import Suresh from '../assets/Suresh.png';
-import Pujan from '../assets/Pujan.png';
-import Bibek from '../assets/Bibek.jpg';
+// src/pages/AboutUs.jsx
+import { 
+  BuildingOfficeIcon, 
+  ScaleIcon, 
+  ChartBarIcon, 
+  ShieldCheckIcon, 
+  LightBulbIcon, 
+  ArrowTrendingUpIcon 
+} from '@heroicons/react/24/outline';
+import teamData from '../data/teamData.json';
+
+// Import all images
 import about from '../assets/about.jpg';
 import About1 from '../assets/About_1.jpg';
 import Graph from '../assets/Graph.png';
-import Prakash from '../assets/Prakash.jpg';
-import Jeshan from '../assets/Jeshan.jpg';
-import Damodar from '../assets/Damodar.png';
+import SureshImg from '../assets/Suresh.png';
+import PujanImg from '../assets/Pujan.png';
+import BibekImg from '../assets/Bibek.jpg';
+import PrakashImg from '../assets/Prakash.jpg';
+import JeshanImg from '../assets/Jeshan.png';
+import ShashankImg from '../assets/Shashank.jpg';
+import DamodarImg from '../assets/Damodar.png';
+
+// Image mapping
+const imageMap = {
+  'Suresh.png': SureshImg,
+  'Pujan.png': PujanImg,
+  'Bibek.jpg': BibekImg,
+  'Prakash.jpg': PrakashImg,
+  'Jeshan.png': JeshanImg,
+  'Shashank.jpg': ShashankImg,
+  'Damodar.png': DamodarImg
+};
 
 export default function AboutUs() {
+  const leadership = teamData.find(member => member.isLeadership);
+  const teamMembers = teamData.filter(member => !member.isLeadership);
+
   return (
     <div className="bg-white">
       {/* Hero Section */}
@@ -18,7 +44,7 @@ export default function AboutUs() {
           <img
             className="w-full h-full object-cover transition-all duration-500 hover:scale-105"
             src={about}
-            alt=""
+            alt="About Us"
           />
           <div className="absolute inset-0 bg-indigo-800 mix-blend-multiply" aria-hidden="true" />
         </div>
@@ -226,51 +252,47 @@ export default function AboutUs() {
       </div>
 
       {/* Leadership Section */}
-{/* Leadership Section */}
-<div className="py-16 bg-gray-50 overflow-hidden transition-all duration-300 hover:bg-gray-100">
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div className="text-center">
-      <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl transition-all duration-300 hover:text-indigo-700">
-        Our Leadership
-      </h2>
-      <p className="mt-4 max-w-2xl text-xl text-gray-500 mx-auto transition-all duration-300 hover:text-gray-700">
-        Experienced professionals guiding your financial success
-      </p>
-    </div>
-
-    <div className="mt-16 flex justify-center">
-      {/* Centered container */}
-      <div className="flex flex-col items-center transition-transform duration-300 hover:scale-105">
-        <div className="group relative flex flex-col items-center">
-          {/* Image container - now properly centered */}
-          <div className="bg-white w-[250px] rounded-lg overflow-hidden shadow-xl transition-all duration-500 group-hover:shadow-2xl flex justify-center">
-            <img
-              src={Suresh}
-              alt="S. Suresh"
-              className="block h-auto max-h-[300px] w-full object-cover mx-auto"
-              style={{ 
-                aspectRatio: '632/764',
-                display: 'block'
-              }}
-            />
+      <div className="py-16 bg-gray-50 overflow-hidden transition-all duration-300 hover:bg-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl transition-all duration-300 hover:text-indigo-700">
+              Our Leadership
+            </h2>
+            <p className="mt-4 max-w-2xl text-xl text-gray-500 mx-auto transition-all duration-300 hover:text-gray-700">
+              Experienced professionals guiding your financial success
+            </p>
           </div>
-          {/* Text content */}
-          <div className="mt-6 text-center w-full">
-            <h3 className="text-2xl font-medium text-gray-900 transition-all duration-300 group-hover:text-indigo-700">
-              CA. Suresh Sharma
-            </h3>
-            <p className="text-lg text-gray-500 mt-2 transition-all duration-300 group-hover:text-indigo-600">
-              Founder & Managing Partner
-            </p>
-            <p className="mt-4 text-base text-gray-600 max-w-2xl mx-auto transition-all duration-300 group-hover:text-gray-700">
-              With over 10+ years of experience, CEO Suresh leads our firm with a commitment to excellence in audit and advisory services, ensuring our clients achieve their financial goals.
-            </p>
+
+          <div className="mt-16 flex justify-center">
+            <div className="flex flex-col items-center transition-transform duration-300 hover:scale-105">
+              <div className="group relative flex flex-col items-center">
+                <div className="bg-white w-[250px] rounded-lg overflow-hidden shadow-xl transition-all duration-500 group-hover:shadow-2xl flex justify-center">
+                  <img
+                    src={imageMap[leadership.image]}
+                    alt={leadership.name}
+                    className="block h-auto max-h-[300px] w-full object-cover mx-auto"
+                    style={{ 
+                      aspectRatio: '632/764',
+                      display: 'block'
+                    }}
+                  />
+                </div>
+                <div className="mt-6 text-center w-full">
+                  <h3 className="text-2xl font-medium text-gray-900 transition-all duration-300 group-hover:text-indigo-700">
+                    {leadership.name}
+                  </h3>
+                  <p className="text-lg text-gray-500 mt-2 transition-all duration-300 group-hover:text-indigo-600">
+                    {leadership.position}
+                  </p>
+                  <p className="mt-4 text-base text-gray-600 max-w-2xl mx-auto transition-all duration-300 group-hover:text-gray-700">
+                    {leadership.description}
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</div>
 
       {/* Team Section */}
       <div className="py-16 bg-white overflow-hidden transition-all duration-300 hover:bg-gray-50">
@@ -286,84 +308,37 @@ export default function AboutUs() {
 
           <div className="mt-16">
             <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-3">
-              {/* Team Member 1 */}
-              <div className="text-center transition-transform duration-300 hover:-translate-y-2">
-                <div className="relative w-40 h-40 mx-auto rounded-full overflow-hidden border-4 border-indigo-100 shadow-lg transition-all duration-500 hover:border-red-600 hover:shadow-xl hover:cursort-pointer">
-                  <img
-                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
-                    src={Damodar}
-                    alt="Damodhar Paudel"
-                  />
-                </div>
-                <h3 className="mt-6 text-xl font-medium text-gray-900 transition-all duration-300 hover:text-indigo-700">Damodar Paudel</h3>
-                <p className="text-lg text-gray-500 mt-2 transition-all duration-300 hover:text-indigo-600">Head of Operation</p>
-                <p className="mt-4 text-base text-gray-600 transition-all duration-300 hover:text-gray-700">
-                  Specializes in corporate taxation and audit with 10+ years of experience across multiple industries.
-                </p>
-              </div>
-
-              {/* Team Member 3 */}
-              <div className="text-center transition-transform duration-300 hover:-translate-y-2">
-                <div className="relative w-40 h-40 mx-auto rounded-full overflow-hidden border-4 border-indigo-100 shadow-lg transition-all duration-500 hover:border-blue-400 hover:shadow-xl hover:cursort-pointer">
-                  <img
-                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
-                    src={Jeshan}
-                    alt="Jeshan Neupane"
-                  />
-                </div>
-                <h3 className="mt-6 text-xl font-medium text-gray-900 transition-all duration-300 hover:text-indigo-700">Jeshan Neupane</h3>
-                <p className="text-lg text-gray-500 mt-2 transition-all duration-300 hover:text-indigo-600">Audit & Compliance Officer</p>
-                <p className="mt-4 text-base text-gray-600 transition-all duration-300 hover:text-gray-700">
-                  Oversees all audit engagements with a focus on risk management and compliance.
-                </p>
-              </div>
-
-              {/* Team Member 4 */}
-              <div className="text-center transition-transform duration-300 hover:-translate-y-2">
-                <div className="relative w-40 h-40 mx-auto rounded-full overflow-hidden border-4 border-indigo-100 shadow-lg transition-all duration-500 hover:border-teal-600 hover:shadow-xl hover:cursort-pointer">
-                  <img
-                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
-                    src={Bibek}
-                    alt="Bibek Shahi"
-                  />
-                </div>
-                <h3 className="mt-6 text-xl font-medium text-gray-900 transition-all duration-300 hover:text-indigo-700">Bibek Shahi</h3>
-                <p className="text-lg text-gray-500 mt-2 transition-all duration-300 hover:text-indigo-600">Audit Officer</p>
-                <p className="mt-4 text-base text-gray-600 transition-all duration-300 hover:text-gray-700">
-                  Provides expert guidance on tax planning and compliance for individuals and businesses.
-                </p>
-              </div>
-
-              {/* Team Member 5 */}
-              <div className="text-center transition-transform duration-300 hover:-translate-y-2">
-                <div className="relative w-40 h-40 mx-auto rounded-full overflow-hidden border-4 border-indigo-100 shadow-lg transition-all duration-500 hover:border-green-400 hover:shadow-xl hover:cursort-pointer">
-                  <img
-                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
-                    src={Pujan}
-                    alt="Pujan Joshi"
-                  />
-                </div>
-                <h3 className="mt-6 text-xl font-medium text-gray-900 transition-all duration-300 hover:text-indigo-700">Pujan Joshi</h3>
-                <p className="text-lg text-gray-500 mt-2 transition-all duration-300 hover:text-indigo-600">IT & Software Designer</p>
-                <p className="mt-4 text-base text-gray-600 transition-all duration-300 hover:text-gray-700">
-                  Specializes in digital transformation and IT systems.
-                </p>
-              </div>
-
-              <div className="text-center transition-transform duration-300 hover:-translate-y-2">
-                <div className="relative w-40 h-40 mx-auto rounded-full overflow-hidden border-4 border-indigo-100 shadow-lg transition-all duration-500 hover:border-indigo-600 hover:shadow-xl hover:cursort-pointer">
-                  <img
-                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
-                    src={Prakash}
-                    alt="Prakash Chaulagai"
-                  />
-                </div>
-                <h3 className="mt-6 text-xl font-medium text-gray-900 transition-all duration-300 hover:text-blue-700">Prakash Chaulagai</h3>
-                <p className="text-lg text-gray-500 mt-2 transition-all duration-300 hover:text-indigo-600">Audit & Compliance Officer</p>
-                <p className="mt-4 text-base text-gray-600 transition-all duration-300 hover:text-gray-700">
-                  Focuses on internal audits and compliance to ensure regulatory adherence.
-                </p>
-              </div>
+              {teamMembers.map((member, index) => {
+                const borderColors = [
+                  'hover:border-red-600',
+                  'hover:border-blue-400',
+                  'hover:border-blue-400',
+                  'hover:border-teal-600',
+                  'hover:border-green-400',
+                  'hover:border-indigo-600'
+                ];
+                
+                return (
+                  <div key={member.name} className="text-center transition-transform duration-300 hover:-translate-y-2">
+                    <div className={`relative w-40 h-40 mx-auto rounded-full overflow-hidden border-4 border-indigo-100 shadow-lg transition-all duration-500 ${borderColors[index]} hover:shadow-xl hover:cursort-pointer`}>
+                      <img
+                        className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                        src={imageMap[member.image]}
+                        alt={member.name}
+                      />
+                    </div>
+                    <h3 className="mt-6 text-xl font-medium text-gray-900 transition-all duration-300 hover:text-indigo-700">
+                      {member.name}
+                    </h3>
+                    <p className="text-lg text-gray-500 mt-2 transition-all duration-300 hover:text-indigo-600">
+                      {member.position}
+                    </p>
+                    <p className="mt-4 text-base text-gray-600 transition-all duration-300 hover:text-gray-700">
+                      {member.description}
+                    </p>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>

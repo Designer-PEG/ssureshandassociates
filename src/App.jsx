@@ -7,6 +7,7 @@ import About from './pages/About';
 import Services from './pages/Services.jsx';
 import Contact from './pages/Contact';
 import NotFound from './pages/NotFound';
+import Insights from './pages/Insights';
 import ScrollToTop from './components/ScrollToTop';
 import './index.css';
 
@@ -24,6 +25,7 @@ function App() {
               <Route path="/services" element={<Services />} />
               <Route path="/services/:id" element={<Services />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/insights" element={<Insights />} />
               {/* Catch-all route for 404 */}
               <Route path="*" element={<NotFound />} />
             </Routes>

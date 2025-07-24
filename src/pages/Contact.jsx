@@ -6,7 +6,7 @@ const DISPOSABLE_EMAIL_DOMAINS = [
   'guerrillamail.com', 'trashmail.com', 'fakeinbox.com', 'throwawaymail.com'
 ];
 
-const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzJzKRDquR6I_v4J3FmckEXduIEEM3neELOn-O3Yrg9bIFQv7hqv3burrtvFnTe71aK/exec';
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwdN3RsbBL9870hsny1l0IRzqjgi6H-565LXpbI8yEwM5Od1tRlIcohjMzf78WxC-og/exec';
 
 const Contact = () => {
   const [formData, setFormData] = useState({

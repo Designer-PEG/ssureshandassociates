@@ -1,0 +1,80 @@
+{
+  "timeRanges": ["This Month", "Last Month", "Quarter", "Year"],
+  "tabs": ["Overview", "VAT", "Financials", "Clients"],
+  "clients": [
+    {
+      "id": 1,
+      "name": "ABC Traders Ltd",
+      "vatReturns": 24500,
+      "sales": 184500,
+      "purchases": 142300,
+      "status": "compliant"
+    },
+    {
+      "id": 2,
+      "name": "XYZ Manufacturing",
+      "vatReturns": 38700,
+      "sales": 287600,
+      "purchases": 254800,
+      "status": "pending"
+    },
+    {
+      "id": 3,
+      "name": "Global Imports Inc",
+      "vatReturns": 18200,
+      "sales": 145300,
+      "purchases": 128700,
+      "status": "compliant"
+    },
+    {
+      "id": 4,
+      "name": "Premium Retail Solutions",
+      "vatReturns": 42100,
+      "sales": 325400,
+      "purchases": 287600,
+      "status": "overdue"
+    }
+  ],
+  "metrics": [
+    {
+      "id": 1,
+      "title": "Total VAT Filed",
+      "value": "₹1,23,500",
+      "change": "+12%",
+      "isPositive": true,
+      "icon": "📑",
+      "description": "Month-over-month change"
+    },
+    {
+      "id": 2,
+      "title": "Compliance Rate",
+      "value": "92%",
+      "change": "+3%",
+      "isPositive": true,
+      "icon": "✅",
+      "description": "On-time filings"
+    },
+    {
+      "id": 3,
+      "title": "Pending Returns",
+      "value": "4",
+      "change": "-2",
+      "isPositive": true,
+      "icon": "⏳",
+      "description": "Compared to last month"
+    },
+    {
+      "id": 4,
+      "title": "Client Growth",
+      "value": "8",
+      "change": "+2",
+      "isPositive": true,
+      "icon": "👥",
+      "description": "New clients this quarter"
+    }
+  ],
+  "vatTrends": {
+    "labels": ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+    "data": [125000, 118000, 145000, 132000, 156000, 123500]
+  }
+}
