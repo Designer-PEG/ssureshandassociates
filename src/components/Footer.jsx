@@ -13,7 +13,7 @@ const Footer = () => {
           <div className="space-y-4">
             <h3 className="text-2xl font-serif font-bold tracking-tight">S.Suresh & Associates</h3>
             <p className="text-neutral-400 font-light leading-relaxed">
-              Chartered Accountants providing strategic partnership in compliance, growth, and governance since 2005.
+              Chartered Accountants providing strategic partnership in compliance, growth, and governance since 2016.
             </p>
             <div className="pt-2">
               <p className="text-neutral-300 font-medium">Available:</p>
