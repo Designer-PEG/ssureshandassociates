@@ -13,6 +13,18 @@
     "description": "Specializes in corporate taxation and audit with 10+ years of experience across multiple industries."
   },
   {
+    "name": "Bibek Shahi",
+    "position": "Audit Officer",
+    "image": "Bibek.jpg",
+    "description": "Provides expert guidance on tax planning and compliance for individuals and businesses."
+  },
+  {
+    "name": "Anuj Hari joshi",
+    "position": "Audit & Compliance Officer",
+    "image": "Anuj.png",
+    "description": "Oversees all audit engagements with a focus on risk management and compliance."
+  },
+  {
     "name": "Shashank Shrestha",
     "position": "Audit & Compliance Officer",
     "image": "Shashank.jpg",
@@ -25,21 +37,15 @@
     "description": "Oversees all audit engagements with a focus on risk management and compliance."
   },
   {
-    "name": "Bibek Shahi",
-    "position": "Audit Officer",
-    "image": "Bibek.jpg",
-    "description": "Provides expert guidance on tax planning and compliance for individuals and businesses."
+    "name": "Prakash Chaulagai",
+    "position": "Audit & Compliance Officer",
+    "image": "Prakash.jpg",
+    "description": "Focuses on internal audits and compliance to ensure regulatory adherence."
   },
   {
     "name": "Pujan Joshi",
     "position": "IT & Software Designer",
     "image": "Pujan.png",
     "description": "Specializes in digital transformation and IT systems."
-  },
-  {
-    "name": "Prakash Chaulagai",
-    "position": "Audit & Compliance Officer",
-    "image": "Prakash.jpg",
-    "description": "Focuses on internal audits and compliance to ensure regulatory adherence."
   }
 ]

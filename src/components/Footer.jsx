@@ -11,12 +11,17 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
           {/* Brand Column */}
           <div className="space-y-4">
-            <h3 className="text-2xl font-serif font-bold tracking-tight">S.Suresh & Associates</h3>
+              <h3 className="text-2xl md:text-2xl lg:text-2xl font-bold tracking-tight"><Link to="/">
+                <span className='text-blue-800'>S</span>
+                <span className='text-green-600'>. Suresh </span> 
+                <span className='text-neutral-300'>& Associates</span>
+                </Link>
+              </h3>
             <p className="text-neutral-400 font-light leading-relaxed">
               Chartered Accountants providing strategic partnership in compliance, growth, and governance since 2016.
             </p>
             <div className="pt-2">
-              <p className="text-neutral-300 font-medium">Available:</p>
+              <p className="text-green-500 font-medium">Available:</p>
               <p className="text-neutral-400">10:00 AM - 5:00 PM, Sunday-Friday</p>
             </div>
           </div>

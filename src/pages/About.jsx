@@ -20,6 +20,7 @@ import PrakashImg from '../assets/Prakash.jpg';
 import JeshanImg from '../assets/Jeshan.png';
 import ShashankImg from '../assets/Shashank.jpg';
 import DamodarImg from '../assets/Damodar.png';
+import AnujImg from '../assets/Anuj.png';
 
 // Image mapping
 const imageMap = {
@@ -29,6 +30,7 @@ const imageMap = {
   'Prakash.jpg': PrakashImg,
   'Jeshan.png': JeshanImg,
   'Shashank.jpg': ShashankImg,
+  'Anuj.png': AnujImg,
   'Damodar.png': DamodarImg
 };
 
