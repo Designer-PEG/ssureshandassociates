@@ -2,39 +2,62 @@
 
 @import "tailwindcss";
 
-@keyframes fadeInOut {
-  0% { opacity: 0; }
-  20% { opacity: 1; }
-  80% { opacity: 1; }
-  100% { opacity: 0; }
-}
-
-.animate-fadeInOut {
-  animation: fadeInOut 3s ease-in-out infinite;
+@theme {
+  --color-primary: #1e40af; /* Deep blue/navy */
+  --color-primary-dark: #1e3a8a;
+  --color-primary-light: #eff6ff;
+  --color-secondary: #0f766e; /* Emerald/teal */
+  --color-secondary-dark: #115e59;
+  --color-secondary-light: #f0fdfa;
+  --color-accent: #b45309; /* Amber/gold */
+  --color-neutral-dark: #1f2937;
+  --color-neutral-light: #f9fafb;
+  
+  --animate-fade-in-out: fadeInOut 3s ease-in-out infinite;
+  --animate-float: float 4s ease-in-out infinite;
+  
+  @keyframes fadeInOut {
+    0% { opacity: 0; }
+    20% { opacity: 1; }
+    80% { opacity: 1; }
+    100% { opacity: 0; }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
 }
 
 body {
   font-family: 'Poppins', sans-serif;
+  color: var(--color-neutral-dark);
+  background-color: #ffffff;
 }
 
 html {
   scroll-behavior: smooth;
 }
 
-/* Optional: Custom scrollbar styling */
+/* Custom Focus States for Keyboard Navigation */
+*:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+/* Custom scrollbar styling */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: var(--color-neutral-light);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #888;
+  background: #cbd5e1;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: #94a3b8;
 }

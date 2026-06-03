@@ -125,7 +125,8 @@ const CTASection = () => {
         setShowForm(false);
         setIsSubmitted(false);
       }, 3000);
-    } catch (err) {
+    } catch (submitError) {
+      console.error('Consultation request failed:', submitError);
       setError('Failed to submit. Please try again later.');
     } finally {
       setIsLoading(false);
@@ -141,19 +142,22 @@ const CTASection = () => {
   };
 
   return (
-    <div className="bg-gradient-to-r from-blue-50 to-indigo-50 py-12 px-4 sm:px-6 lg:px-8">
+    <div className="bg-gradient-to-r from-blue-50/50 to-primary-light/40 py-20 px-6 sm:px-8">
       <div className="max-w-4xl mx-auto text-center">
-        <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+        <span className="text-blue-600 font-bold uppercase tracking-widest text-xs">
+          Connect With Us
+        </span>
+        <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 mt-2">
           Ready to Transform Your Financial Health?
         </h2>
-        <p className="mt-4 text-lg text-gray-600">
-          Get expert audit and advisory services tailored to your business needs.
+        <p className="mt-4 text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
+          Get expert audit and advisory services tailored to your organizational needs.
         </p>
         
-        <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
+        <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">
           <a
             href="tel:+9779851135421"
-            className="px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 transition duration-150 ease-in-out"
+            className="px-8 py-4 border border-transparent text-base font-bold rounded-lg text-white bg-primary hover:bg-primary-dark shadow-md hover:shadow-lg transition duration-200 ease-in-out cursor-pointer"
           >
             Call Us Now
           </a>
@@ -165,12 +169,12 @@ const CTASection = () => {
                 setError('');
               }
             }}
-            className={`px-6 py-3 border border-transparent text-base font-medium rounded-md transition duration-150 ease-in-out ${
+            className={`px-8 py-4 border border-transparent text-base font-bold rounded-lg transition duration-200 ease-in-out cursor-pointer ${
               showForm 
-                ? 'bg-indigo-800 text-white hover:bg-indigo-900' 
+                ? 'bg-gray-800 text-white hover:bg-gray-900' 
                 : cooldown
                   ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
-                  : 'text-indigo-700 bg-indigo-100 hover:bg-indigo-200'
+                  : 'text-primary bg-primary-light hover:bg-blue-100'
             }`}
             disabled={!!cooldown}
           >
@@ -179,53 +183,61 @@ const CTASection = () => {
         </div>
 
         {cooldown && (
-          <div className="mt-4 text-sm text-gray-600">
+          <div className="mt-4 text-sm text-gray-600 font-medium">
             You can only schedule once every 2 hours. Time remaining: {formatTime(cooldown)}
           </div>
         )}
 
         {showForm && (
-          <form onSubmit={handleSubmit} className="mt-6 max-w-md mx-auto">
-            <div className="flex flex-col sm:flex-row gap-2">
-              <div className="flex-1">
+          <form onSubmit={handleSubmit} className="mt-8 max-w-md mx-auto bg-white p-6 rounded-xl border border-gray-100 shadow-lg text-left">
+            <div className="flex flex-col gap-3">
+              <div>
+                <label htmlFor="cta-email" className="block text-sm font-semibold text-gray-700 mb-2">
+                  Professional Email Address
+                </label>
                 <input
                   type="email"
+                  id="cta-email"
                   value={email}
                   onChange={(e) => {
                     setEmail(e.target.value);
                     if (error) setError('');
                   }}
-                  placeholder="Enter your professional email"
+                  placeholder="e.g., manager@yourcompany.com"
                   required
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"
+                  className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:border-primary focus:ring-2 focus:ring-primary-light focus:outline-none transition-all text-sm"
+                  aria-invalid={!!error}
+                  aria-describedby={error ? "cta-email-error" : undefined}
                 />
                 {error && (
-                  <p className="mt-1 text-sm text-red-600 text-left">{error}</p>
+                  <p id="cta-email-error" className="mt-2 text-xs font-semibold text-red-600 text-left flex items-center">
+                    <span className="mr-1">⚠</span> {error}
+                  </p>
                 )}
               </div>
               <button
                 type="submit"
                 disabled={isLoading}
-                className={`px-4 py-2 rounded-md transition duration-150 ease-in-out sm:mt-0 mt-2 ${
+                className={`w-full py-3 px-4 rounded-lg text-sm font-bold text-white transition duration-200 ease-in-out cursor-pointer ${
                   isLoading
-                    ? 'bg-indigo-400 cursor-not-allowed'
-                    : 'bg-indigo-600 hover:bg-indigo-700 text-white'
+                    ? 'bg-primary-light text-primary cursor-not-allowed'
+                    : 'bg-primary hover:bg-primary-dark shadow-sm'
                 }`}
               >
-                {isLoading ? 'Sending...' : 'Submit'}
+                {isLoading ? 'Submitting Request...' : 'Request consultation'}
               </button>
             </div>
             {isSubmitted && (
-              <p className="mt-2 text-sm text-green-600">
-                Thank you! We'll contact you shortly.
-              </p>
+              <div className="mt-4 p-3 bg-emerald-50 text-emerald-800 rounded-lg text-xs font-semibold text-center border border-emerald-100">
+                ✓ Thank you! We will get back to you shortly.
+              </div>
             )}
           </form>
         )}
 
-        <div className="mt-6 flex items-center justify-center space-x-2 text-sm text-gray-500">
+        <div className="mt-8 flex items-center justify-center space-x-2 text-xs font-medium text-gray-500">
           <svg
-            className="h-5 w-5 text-gray-400"
+            className="h-4.5 w-4.5 text-gray-400"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 20 20"
             fill="currentColor"
@@ -237,7 +249,7 @@ const CTASection = () => {
               clipRule="evenodd"
             />
           </svg>
-          <span>Available Sunday-Friday, 10:00 AM - 5:00 PM</span>
+          <span>Support Hours: Sunday - Friday, 10:00 AM - 5:00 PM</span>
         </div>
       </div>
     </div>
