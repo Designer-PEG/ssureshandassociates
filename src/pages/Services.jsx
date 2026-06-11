@@ -50,8 +50,14 @@ const ServiceCard = ({ icon, title, description, index, onSelect }) => {
       ref={ref}
       initial={{ opacity: 0, y: 30 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="bg-white rounded-xl p-8 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex flex-col items-center text-center h-full border border-gray-100 hover:border-blue-100 cursor-pointer"
+      whileHover={{ y: -4, borderColor: "#bfdbfe", boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)" }}
+      transition={{ 
+        type: "spring",
+        stiffness: 300,
+        damping: 20,
+        default: { duration: 0.5, delay: index * 0.05 } 
+      }}
+      className="bg-white rounded-xl p-8 border border-gray-100 flex flex-col items-center text-center h-full cursor-pointer transition-colors duration-300"
       onClick={() => onSelect(index)}
     >
       <div className="w-14 h-14 rounded-xl flex items-center justify-center mb-6 bg-blue-50 text-blue-600">
@@ -90,9 +96,10 @@ const ServiceDetail = ({ service, onBack }) => {
 
   return (
     <Motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.3 }}
+      initial={{ opacity: 0, y: 15 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -15 }}
+      transition={{ duration: 0.25 }}
       className="bg-gray-50 min-h-screen py-10"
     >
       <div className="container mx-auto max-w-4xl px-4">
@@ -227,69 +234,78 @@ const ProfessionalServices = () => {
       <main className="flex-grow">
         <section className="py-20 bg-gray-50/50 relative">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            {selectedService === null ? (
-              <>
+            <AnimatePresence mode="wait">
+              {selectedService === null ? (
                 <Motion.div
-                  ref={headerRef}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={headerInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.6 }}
-                  className="text-center mb-16"
+                  key="services-list"
+                  initial={{ opacity: 0, y: 15 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -15 }}
+                  transition={{ duration: 0.25 }}
                 >
-                  <span className="text-blue-600 font-bold uppercase tracking-widest text-xs">
-                    Our Expertise
-                  </span>
-                  <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 mt-2">Professional Services</h2>
-                  <div className="w-16 h-1 bg-blue-600 mx-auto my-4 rounded-full"></div>
-                  <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto font-light">
-                    Comprehensive compliance, assurance, and business growth advisory designed specifically to navigate Nepal's financial regulatory landscape.
-                  </p>
+                  <Motion.div
+                    ref={headerRef}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={headerInView ? { opacity: 1, y: 0 } : {}}
+                    transition={{ duration: 0.6 }}
+                    className="text-center mb-16"
+                  >
+                    <span className="text-blue-600 font-bold uppercase tracking-widest text-xs">
+                      Our Expertise
+                    </span>
+                    <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 mt-2">Professional Services</h2>
+                    <div className="w-16 h-1 bg-blue-600 mx-auto my-4 rounded-full"></div>
+                    <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto font-light">
+                      Comprehensive compliance, assurance, and business growth advisory designed specifically to navigate Nepal's financial regulatory landscape.
+                    </p>
+                  </Motion.div>
+
+                  {/* Categories Tab Filter */}
+                  <div className="flex flex-wrap justify-center gap-3 mb-12 max-w-4xl mx-auto">
+                    {categories.map(cat => {
+                      const isActive = activeCategory === cat;
+                      return (
+                        <button
+                          key={cat}
+                          onClick={() => setActiveCategory(cat)}
+                          className={`px-5 py-2.5 rounded-lg text-sm font-semibold transition-all flex items-center gap-2 cursor-pointer ${
+                            isActive 
+                              ? "bg-primary text-white shadow-md" 
+                              : "bg-white text-gray-600 border border-gray-200 hover:border-blue-300 hover:text-blue-600"
+                          }`}
+                        >
+                          <span>{cat}</span>
+                          <span className={`text-[10px] font-bold px-1.5 py-0.5 rounded-full ${
+                            isActive ? "bg-white text-primary" : "bg-gray-100 text-gray-500"
+                          }`}>
+                            {getServiceCount(cat)}
+                          </span>
+                        </button>
+                      );
+                    })}
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {filteredServices.map((service, index) => (
+                      <ServiceCard
+                        key={service.id}
+                        icon={service.icon}
+                        title={service.title}
+                        description={service.description}
+                        index={index}
+                        onSelect={() => setSelectedService(service)}
+                      />
+                    ))}
+                  </div>
                 </Motion.div>
-
-                {/* Categories Tab Filter */}
-                <div className="flex flex-wrap justify-center gap-3 mb-12 max-w-4xl mx-auto">
-                  {categories.map(cat => {
-                    const isActive = activeCategory === cat;
-                    return (
-                      <button
-                        key={cat}
-                        onClick={() => setActiveCategory(cat)}
-                        className={`px-5 py-2.5 rounded-lg text-sm font-semibold transition-all flex items-center gap-2 cursor-pointer ${
-                          isActive 
-                            ? "bg-primary text-white shadow-md" 
-                            : "bg-white text-gray-600 border border-gray-200 hover:border-blue-300 hover:text-blue-600"
-                        }`}
-                      >
-                        <span>{cat}</span>
-                        <span className={`text-[10px] font-bold px-1.5 py-0.5 rounded-full ${
-                          isActive ? "bg-white text-primary" : "bg-gray-100 text-gray-500"
-                        }`}>
-                          {getServiceCount(cat)}
-                        </span>
-                      </button>
-                    );
-                  })}
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                  {filteredServices.map((service, index) => (
-                    <ServiceCard
-                      key={service.id}
-                      icon={service.icon}
-                      title={service.title}
-                      description={service.description}
-                      index={index}
-                      onSelect={() => setSelectedService(service)}
-                    />
-                  ))}
-                </div>
-              </>
-            ) : (
-              <ServiceDetail 
-                service={selectedService} 
-                onBack={() => setSelectedService(null)} 
-              />
-            )}
+              ) : (
+                <ServiceDetail 
+                  key={`service-detail-${selectedService.id}`}
+                  service={selectedService} 
+                  onBack={() => setSelectedService(null)} 
+                />
+              )}
+            </AnimatePresence>
           </div>
         </section>
       </main>

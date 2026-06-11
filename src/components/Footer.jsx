@@ -14,7 +14,7 @@ const Footer = () => {
             <h3 className="text-2xl font-bold tracking-tight">
               <Link to="/" className="hover:opacity-90 transition-opacity">
                 <span className="text-blue-500">S. Suresh</span>
-                <span className="text-neutral-300 font-light"> & Associates</span>
+                <span className="text-green-600 font-bold"> & Associates</span>
               </Link>
             </h3>
             <p className="text-neutral-400 font-light leading-relaxed text-sm">

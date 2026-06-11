@@ -31,7 +31,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative h-[85vh] min-h-[600px] flex items-center bg-gray-900 overflow-hidden">
+    <section className="relative h-[93vh] min-h-[600px] flex items-center bg-gray-900 overflow-hidden">
       {/* Background Image with proper overlay */}
       <div className="absolute inset-0 overflow-hidden h-full">
         <div className="relative w-full h-full">
