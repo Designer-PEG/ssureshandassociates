@@ -1,0 +1,11 @@
+# S. Suresh & Associates Robots Configuration
+# https://ssureshandassociates.com.np/
+
+User-agent: *
+# Disallow indexing of private client portal dashboards
+Disallow: /insights
+# Allow indexing of all public corporate pages
+Allow: /
+
+# Sitemap Location
+Sitemap: https://ssureshandassociates.com.np/sitemap.xml
