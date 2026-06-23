@@ -100,7 +100,10 @@ const Hero = () => {
           {/* Dynamic Holiday Flag (preserved DNA) */}
           {isHolidayBg && (
             <div className="mt-8 inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/30 px-3 py-1.5 rounded-lg text-amber-400 text-xs font-semibold">
-              🎉 Celebrating dynamic seasonal themes.
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-amber-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+              </svg>
+              <span>Celebrating dynamic seasonal themes.</span>
             </div>
           )}
           

@@ -117,8 +117,11 @@ export default function Services() {
                     </ul>
 
                     {siteConfig.isStaging && (
-                      <div className="mt-6 border-t border-brand-navy/5 pt-4 text-[9px] text-amber-600 italic font-medium leading-normal">
-                        ⚠️ [placeholder sub-services — confirm with firm]
+                      <div className="mt-6 border-t border-brand-navy/5 pt-4 text-[9px] text-amber-600 italic font-medium leading-normal flex items-center gap-1.5">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5 text-amber-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                        </svg>
+                        <span>[placeholder sub-services — confirm with firm]</span>
                       </div>
                     )}
                   </div>

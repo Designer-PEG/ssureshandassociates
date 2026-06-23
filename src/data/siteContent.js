@@ -188,16 +188,6 @@ export const siteConfig = {
       isPlaceholder: false
     },
     {
-      id: "team-4",
-      name: "Anuj Hari joshi",
-      role: "Audit & Compliance Officer",
-      credential: "Audit Officer",
-      bio: "Oversees all audit engagements with a focus on risk management and compliance.",
-      image: "Anuj.png",
-      isLeadership: false,
-      isPlaceholder: false
-    },
-    {
       id: "team-5",
       name: "Shashank Shrestha",
       role: "Audit & Compliance Officer",
