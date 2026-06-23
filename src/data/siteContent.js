@@ -1,7 +1,7 @@
 // Centralized site copy data for S. Suresh & Associates
 // Mark isStaging: true to show staging banners/badges next to unverified content.
 export const siteConfig = {
-  isStaging: true,
+  isStaging: false,
   
   // Confirmed business facts (Safe for production use)
   firmInfo: {
