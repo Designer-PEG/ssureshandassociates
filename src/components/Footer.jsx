@@ -129,9 +129,14 @@ const Footer = () => {
         {/* Divider & Legal */}
         <div className="border-t border-white/5 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-gray-500 text-[11px] tracking-wide">
-              &copy; {new Date().getFullYear()} {siteConfig.firmInfo.name}. Regulated by ICAN, Nepal. All rights reserved.
-            </p>
+            <div className="space-y-1 text-center md:text-left">
+              <p className="text-gray-500 text-[11px] tracking-wide">
+                &copy; {new Date().getFullYear()} {siteConfig.firmInfo.name}. Regulated by ICAN, Nepal. All rights reserved.
+              </p>
+              <p className="text-gray-600 text-[10px] tracking-wide font-sans-ui">
+                Designed & Developed by <a href="https://pujan-joshi.com.np" target="_blank" rel="noopener noreferrer" className="hover:text-brand-gold text-gray-500 transition-colors font-medium">Pujan Joshi</a>
+              </p>
+            </div>
             <div className="flex space-x-6 text-[11px] tracking-wide">
               <Link to="/sitemap" className="text-gray-500 hover:text-gray-300 transition-colors duration-200">
                 Sitemap

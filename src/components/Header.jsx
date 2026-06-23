@@ -142,13 +142,17 @@ const Header = () => {
         aria-label="Mobile Navigation"
       >
         <div className="flex justify-between items-center px-6 py-5 border-b border-white/5">
-          <div className="flex items-center gap-2">
+          <Link 
+            to="/" 
+            className="flex items-center gap-2"
+            onClick={() => setIsOpen(false)}
+          >
             <img 
               src={Logo} 
               alt="S. Suresh & Associates Logo" 
               className="h-8 w-auto object-contain"
             />
-          </div>
+          </Link>
           <button
             onClick={() => setIsOpen(false)}
             className="text-gray-400 hover:text-brand-gold p-2 rounded-lg transition-colors"
@@ -161,6 +165,17 @@ const Header = () => {
         </div>
 
         <nav className="flex-grow px-6 py-8 space-y-4 overflow-y-auto">
+          <Link 
+            to="/" 
+            className={`flex items-center px-4 py-3 rounded-lg text-base font-semibold font-sans-ui transition-all duration-200 ${
+              isActive('/') 
+                ? 'text-brand-gold bg-white/5 font-bold' 
+                : 'text-gray-300 hover:text-brand-gold hover:bg-white/5'
+            }`}
+            onClick={() => setIsOpen(false)}
+          >
+            Home
+          </Link>
           {navLinks.map((link) => {
             const active = isActive(link.path);
             return (

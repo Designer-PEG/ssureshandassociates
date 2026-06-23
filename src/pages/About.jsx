@@ -51,7 +51,18 @@ const TeamMember = ({ name, role, credential, bio, image, isPlaceholder }) => {
         {/* Name & Credentials */}
         <div className="text-center md:text-left">
           <h3 className="font-serif-display text-xl font-bold text-brand-navy">
-            {name}
+            {name === "Pujan Joshi" ? (
+              <a 
+                href="https://pujan-joshi.com.np" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="hover:text-brand-gold transition-colors duration-200"
+              >
+                {name}
+              </a>
+            ) : (
+              name
+            )}
           </h3>
           <span className="text-[10px] font-mono-ledger font-bold text-brand-gold uppercase tracking-wider block mt-1">
             {credential}
