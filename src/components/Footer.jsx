@@ -26,7 +26,7 @@ const Footer = () => {
               <p className="text-brand-gold font-bold uppercase tracking-wider">Office Hours</p>
               <p className="text-gray-400 mt-1 flex items-center gap-2">
                 {siteConfig.contact.hours}
-                {siteConfig.contact.isPlaceholder && (
+                {siteConfig.contact.isPlaceholder && siteConfig.isStaging && (
                   <span className="bg-amber-500/10 text-amber-500 text-[8px] px-1.5 py-0.5 rounded font-mono font-bold tracking-normal uppercase border border-amber-500/20">Staging</span>
                 )}
               </p>
@@ -97,7 +97,7 @@ const Footer = () => {
                   >
                     {siteConfig.contact.address}
                   </a>
-                  {siteConfig.contact.isPlaceholder && (
+                  {siteConfig.contact.isPlaceholder && siteConfig.isStaging && (
                     <span className="bg-amber-500/10 text-amber-500 text-[8px] px-1.5 py-0.5 rounded font-mono font-bold tracking-normal uppercase border border-amber-500/20">Staging</span>
                   )}
                 </div>
@@ -109,7 +109,7 @@ const Footer = () => {
                   <a href="tel:+9779851135421" className="hover:text-white transition-colors">
                     {siteConfig.contact.phone}
                   </a>
-                  {siteConfig.contact.isPlaceholder && (
+                  {siteConfig.contact.isPlaceholder && siteConfig.isStaging && (
                     <span className="bg-amber-500/10 text-amber-500 text-[8px] px-1.5 py-0.5 rounded font-mono font-bold tracking-normal uppercase border border-amber-500/20">Staging</span>
                   )}
                 </div>
@@ -117,7 +117,7 @@ const Footer = () => {
                   <a href="mailto:2015casuresh@gmail.com" className="hover:text-white transition-colors break-all">
                     {siteConfig.contact.email}
                   </a>
-                  {siteConfig.contact.isPlaceholder && (
+                  {siteConfig.contact.isPlaceholder && siteConfig.isStaging && (
                     <span className="bg-amber-500/10 text-amber-500 text-[8px] px-1.5 py-0.5 rounded font-mono font-bold tracking-normal uppercase border border-amber-500/20">Staging</span>
                   )}
                 </div>

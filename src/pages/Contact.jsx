@@ -201,7 +201,7 @@ const Contact = () => {
                       >
                         {siteConfig.contact.address}
                       </a>
-                      {siteConfig.contact.isPlaceholder && (
+                      {siteConfig.contact.isPlaceholder && siteConfig.isStaging && (
                         <span className="bg-amber-500/10 text-amber-500 text-[8px] font-mono-ledger font-bold px-1.5 py-0.5 uppercase tracking-wide border border-amber-500/20">Staging</span>
                       )}
                     </div>
@@ -221,7 +221,7 @@ const Contact = () => {
                       <a href="tel:+9779851135421" className="text-brand-navy font-bold text-base hover:text-brand-gold hover:underline">
                         {siteConfig.contact.phone}
                       </a>
-                      {siteConfig.contact.isPlaceholder && (
+                      {siteConfig.contact.isPlaceholder && siteConfig.isStaging && (
                         <span className="bg-amber-500/10 text-amber-500 text-[8px] font-mono-ledger font-bold px-1.5 py-0.5 uppercase tracking-wide border border-amber-500/20">Staging</span>
                       )}
                     </div>
@@ -242,7 +242,7 @@ const Contact = () => {
                       <a href="mailto:2015casuresh@gmail.com" className="text-brand-navy font-bold text-base hover:text-brand-gold hover:underline break-all">
                         {siteConfig.contact.email}
                       </a>
-                      {siteConfig.contact.isPlaceholder && (
+                      {siteConfig.contact.isPlaceholder && siteConfig.isStaging && (
                         <span className="bg-amber-500/10 text-amber-500 text-[8px] font-mono-ledger font-bold px-1.5 py-0.5 uppercase tracking-wide border border-amber-500/20">Staging</span>
                       )}
                     </div>
