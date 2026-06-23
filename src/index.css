@@ -1,17 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=JetBrains+Mono:wght@400;700&display=swap');
 
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #1e40af; /* Deep blue/navy */
-  --color-primary-dark: #1e3a8a;
-  --color-primary-light: #eff6ff;
-  --color-secondary: #0f766e; /* Emerald/teal */
-  --color-secondary-dark: #115e59;
-  --color-secondary-light: #f0fdfa;
-  --color-accent: #b45309; /* Amber/gold */
-  --color-neutral-dark: #1f2937;
-  --color-neutral-light: #f9fafb;
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  
+  --color-primary: #0F172A; /* Deep navy primary */
+  --color-primary-dark: #020617;
+  --color-primary-light: #1E293B;
+  
+  --color-brand-navy: #0F172A;
+  --color-brand-ivory: #FDFBF7;
+  --color-brand-gold: #C5A880;
+  --color-brand-gold-dark: #A88F65;
+  --color-brand-light-gray: #F1F5F9;
+  
+  --color-accent: #C5A880; /* Muted gold/tan */
+  --color-neutral-dark: #1E293B;
+  --color-neutral-light: #F8FAFC;
   
   --animate-fade-in-out: fadeInOut 3s ease-in-out infinite;
   --animate-float: float 4s ease-in-out infinite;
@@ -29,9 +37,9 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font-sans);
   color: var(--color-neutral-dark);
-  background-color: #ffffff;
+  background-color: var(--color-brand-ivory);
 }
 
 html {
@@ -40,7 +48,7 @@ html {
 
 /* Custom Focus States for Keyboard Navigation */
 *:focus-visible {
-  outline: 2px solid var(--color-primary);
+  outline: 2px solid var(--color-brand-gold);
   outline-offset: 3px;
 }
 
@@ -50,7 +58,7 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--color-neutral-light);
+  background: var(--color-brand-ivory);
 }
 
 ::-webkit-scrollbar-thumb {
@@ -60,4 +68,28 @@ html {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #94a3b8;
+}
+
+/* Typographic custom styles for Ledger lines */
+.font-serif-display {
+  font-family: var(--font-serif);
+}
+
+.font-sans-ui {
+  font-family: var(--font-sans);
+}
+
+.font-mono-ledger {
+  font-family: var(--font-mono);
+}
+
+/* Hairline border utilities */
+.border-hairline {
+  border-width: 1px;
+  border-color: rgba(15, 23, 42, 0.08);
+}
+
+.border-hairline-dark {
+  border-width: 1px;
+  border-color: rgba(255, 255, 255, 0.1);
 }

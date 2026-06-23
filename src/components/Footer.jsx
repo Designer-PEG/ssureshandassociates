@@ -1,72 +1,84 @@
 import { Link } from 'react-router-dom';
-import servicesData from '../data/services.json';
+import { siteConfig } from '../data/siteContent';
 
 const Footer = () => {
-  // Use first 5 services instead of random sorting to maintain UI consistency
-  const footerServices = servicesData.slice(0, 5);
-
   return (
-    <footer className="bg-neutral-900 text-neutral-100 py-16 border-t border-neutral-800">
+    <footer className="bg-brand-navy text-neutral-100 py-16 border-t border-brand-gold/20 font-sans-ui">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
+          
           {/* Brand Column */}
           <div className="space-y-5">
-            <h3 className="text-2xl font-bold tracking-tight">
-              <Link to="/" className="hover:opacity-90 transition-opacity">
-                <span className="text-blue-500">S. Suresh</span>
-                <span className="text-green-600 font-bold"> & Associates</span>
+            <h3 className="text-xl font-bold tracking-tight">
+              <Link to="/" className="flex items-center gap-3.5 group">
+                <div className="w-8 h-8 border border-brand-gold bg-brand-navy flex items-center justify-center font-serif-display text-brand-gold text-sm font-bold group-hover:bg-brand-gold group-hover:text-brand-navy transition-all">
+                  SS
+                </div>
+                <div className="flex flex-col">
+                  <span className="font-serif-display text-white text-base font-semibold group-hover:text-brand-gold transition-colors">
+                    {siteConfig.firmInfo.name}
+                  </span>
+                  <span className="text-[8px] text-gray-400 uppercase tracking-widest mt-0.5">
+                    {siteConfig.firmInfo.tagline}
+                  </span>
+                </div>
               </Link>
             </h3>
-            <p className="text-neutral-400 font-light leading-relaxed text-sm">
-              Chartered Accountants providing strategic partnership in compliance, growth, and governance since 2016.
+            <p className="text-gray-400 font-light leading-relaxed text-xs">
+              Registered Chartered Accountants providing auditing, tax planning, and compliance advisories in Nepal. Operating since {siteConfig.firmInfo.establishedYear}.
             </p>
-            <div className="pt-2 text-sm">
-              <p className="text-emerald-500 font-semibold">Business Hours:</p>
-              <p className="text-neutral-400 mt-1">10:00 AM - 5:00 PM, Sunday - Friday</p>
+            <div className="pt-2 text-xs">
+              <p className="text-brand-gold font-bold uppercase tracking-wider">Office Hours</p>
+              <p className="text-gray-400 mt-1 flex items-center gap-2">
+                {siteConfig.contact.hours}
+                {siteConfig.contact.isPlaceholder && (
+                  <span className="bg-amber-500/10 text-amber-500 text-[8px] px-1.5 py-0.5 rounded font-mono font-bold tracking-normal uppercase border border-amber-500/20">Staging</span>
+                )}
+              </p>
             </div>
           </div>
           
-          {/* Quick Links */}
+          {/* Quick Navigation */}
           <div>
-            <h4 className="text-sm font-semibold mb-6 uppercase tracking-wider text-neutral-300">Navigation</h4>
-            <ul className="space-y-3 text-sm">
+            <h4 className="text-xs font-bold mb-6 uppercase tracking-widest text-brand-gold">Navigation</h4>
+            <ul className="space-y-3 text-xs">
               <li>
-                <Link to="/" className="text-neutral-400 hover:text-white hover:underline transition-colors duration-200">
+                <Link to="/" className="text-gray-400 hover:text-white transition-colors duration-200">
                   Home
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="text-neutral-400 hover:text-white hover:underline transition-colors duration-200">
+                <Link to="/about" className="text-gray-400 hover:text-white transition-colors duration-200">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="text-neutral-400 hover:text-white hover:underline transition-colors duration-200">
+                <Link to="/services" className="text-gray-400 hover:text-white transition-colors duration-200">
                   Services
                 </Link>
               </li>
               <li>
-                <Link to="/insights" className="text-neutral-400 hover:text-white hover:underline transition-colors duration-200">
+                <Link to="/insights" className="text-gray-400 hover:text-white transition-colors duration-200">
                   Insights
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="text-neutral-400 hover:text-white hover:underline transition-colors duration-200">
+                <Link to="/contact" className="text-gray-400 hover:text-white transition-colors duration-200">
                   Contact
                 </Link>
               </li>
             </ul>
           </div>
           
-          {/* Services */}
+          {/* Core Services */}
           <div>
-            <h4 className="text-sm font-semibold mb-6 uppercase tracking-wider text-neutral-300">Our Expertise</h4>
-            <ul className="space-y-3 text-sm">
-              {footerServices.map((service) => (
+            <h4 className="text-xs font-bold mb-6 uppercase tracking-widest text-brand-gold">Our Expertise</h4>
+            <ul className="space-y-3 text-xs">
+              {siteConfig.services.map((service) => (
                 <li key={service.id}>
                   <Link 
-                    to={`/services/${service.id}`} 
-                    className="text-neutral-400 hover:text-white hover:underline transition-colors duration-200"
+                    to={`/services#${service.id}`} 
+                    className="text-gray-400 hover:text-white transition-colors duration-200"
                   >
                     {service.title}
                   </Link>
@@ -75,57 +87,58 @@ const Footer = () => {
             </ul>
           </div>
           
-          {/* Contact */}
+          {/* Contact Details */}
           <div>
-            <h4 className="text-sm font-semibold mb-6 uppercase tracking-wider text-neutral-300">Reach Us</h4>
-            <address className="text-neutral-400 not-italic space-y-4 text-sm">
+            <h4 className="text-xs font-bold mb-6 uppercase tracking-widest text-brand-gold">Reach Us</h4>
+            <address className="text-gray-400 not-italic space-y-4 text-xs">
               <div>
-                <p className="font-semibold text-neutral-300">Head Office:</p>
-                <p className="mt-1">
+                <p className="font-semibold text-gray-300">Office Location:</p>
+                <div className="mt-1 flex items-center gap-1.5 flex-wrap">
                   <a 
                     href="https://maps.app.goo.gl/StsAueTS1QknMu7x5" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="text-blue-400 hover:text-blue-300 hover:underline inline-flex items-center"
+                    className="text-brand-gold hover:underline inline-flex items-center"
                   >
-                    Tinkune, Kathmandu, Nepal
-                    <svg className="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                    </svg>
+                    {siteConfig.contact.address}
                   </a>
-                </p>
+                  {siteConfig.contact.isPlaceholder && (
+                    <span className="bg-amber-500/10 text-amber-500 text-[8px] px-1.5 py-0.5 rounded font-mono font-bold tracking-normal uppercase border border-amber-500/20">Staging</span>
+                  )}
+                </div>
               </div>
-              <div>
-                <p className="font-semibold text-neutral-300">Direct Contact:</p>
-                <p className="mt-1">
+              
+              <div className="space-y-1.5">
+                <p className="font-semibold text-gray-300">Direct Contact:</p>
+                <div className="flex items-center gap-2">
                   <a href="tel:+9779851135421" className="hover:text-white transition-colors">
-                    +977 (98) 5113 5421
+                    {siteConfig.contact.phone}
                   </a>
-                </p>
-                <p className="mt-1">
-                  <a href="mailto:2015casuresh@gmail.com" className="hover:text-white transition-colors">
-                    2015casuresh@gmail.com
+                  {siteConfig.contact.isPlaceholder && (
+                    <span className="bg-amber-500/10 text-amber-500 text-[8px] px-1.5 py-0.5 rounded font-mono font-bold tracking-normal uppercase border border-amber-500/20">Staging</span>
+                  )}
+                </div>
+                <div className="flex items-center gap-2">
+                  <a href="mailto:2015casuresh@gmail.com" className="hover:text-white transition-colors break-all">
+                    {siteConfig.contact.email}
                   </a>
-                </p>
+                  {siteConfig.contact.isPlaceholder && (
+                    <span className="bg-amber-500/10 text-amber-500 text-[8px] px-1.5 py-0.5 rounded font-mono font-bold tracking-normal uppercase border border-amber-500/20">Staging</span>
+                  )}
+                </div>
               </div>
             </address>
           </div>
         </div>
         
-        {/* Divider & Copyright */}
-        <div className="border-t border-neutral-800 mt-12 pt-8">
+        {/* Divider & Legal */}
+        <div className="border-t border-white/5 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-neutral-500 text-sm">
-              &copy; {new Date().getFullYear()} S. Suresh & Associates, CA. All rights reserved.
+            <p className="text-gray-500 text-[11px] tracking-wide">
+              &copy; {new Date().getFullYear()} {siteConfig.firmInfo.name}. Regulated by ICAN, Nepal. All rights reserved.
             </p>
-            <div className="flex space-x-6 text-sm">
-              <Link to="/privacypolicy" className="text-neutral-500 hover:text-neutral-300 transition-colors duration-200">
-                Privacy Policy
-              </Link>
-              <Link to="/terms" className="text-neutral-500 hover:text-neutral-300 transition-colors duration-200">
-                Terms of Service
-              </Link>
-              <Link to="/sitemap" className="text-neutral-500 hover:text-neutral-300 transition-colors duration-200">
+            <div className="flex space-x-6 text-[11px] tracking-wide">
+              <Link to="/sitemap" className="text-gray-500 hover:text-gray-300 transition-colors duration-200">
                 Sitemap
               </Link>
             </div>

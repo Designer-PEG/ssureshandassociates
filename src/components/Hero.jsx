@@ -1,12 +1,15 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { siteConfig } from '../data/siteContent';
+
+// Import local assets
 import heroBg from '../assets/hero-bg.jpg';
 import Rakhi from '../assets/rakhi.jpg';
 import Gaijatra from '../assets/gaijatra.jpg';
-import { Link } from 'react-router-dom';
 
 const Hero = () => {
   const [currentBg, setCurrentBg] = useState(heroBg);
-  const [showText, setShowText] = useState(true);
+  const [isHolidayBg, setIsHolidayBg] = useState(false);
 
   useEffect(() => {
     const checkDate = () => {
@@ -17,92 +20,93 @@ const Hero = () => {
 
       if (isRakhi) {
         setCurrentBg(Rakhi);
-        setShowText(false);
+        setIsHolidayBg(true);
       } else if (isGaijatra) {
         setCurrentBg(Gaijatra);
-        setShowText(false);
+        setIsHolidayBg(true);
       } else {
         setCurrentBg(heroBg);
-        setShowText(true);
+        setIsHolidayBg(false);
       }
     };
-
     checkDate();
   }, []);
 
   return (
-    <section className="relative h-[93vh] min-h-[600px] flex items-center bg-gray-900 overflow-hidden">
-      {/* Background Image with proper overlay */}
+    <section className="relative h-[85vh] min-h-[600px] flex items-center bg-brand-navy overflow-hidden">
+      
+      {/* Background Image & Sheet Grid Overlay */}
       <div className="absolute inset-0 overflow-hidden h-full">
         <div className="relative w-full h-full">
           {/* Image */}
           <img 
             src={currentBg} 
-            alt="Professional background" 
-            className="w-full h-full object-cover object-center transform scale-100 transition-transform duration-10000"
+            alt="Chartered Accountancy Ledger Backdrop" 
+            className="w-full h-full object-cover object-center transform scale-100 transition-transform duration-[10000ms] opacity-65"
           />
-          {/* Dark overlay - darker to ensure WCAG color contrast */}
-          <div className="absolute inset-0 bg-gradient-to-r from-neutral-950/80 via-neutral-900/65 to-neutral-900/45"></div>
+          {/* Linear gradient shade to ensure high contrast */}
+          <div className="absolute inset-0 bg-gradient-to-r from-brand-navy via-brand-navy/85 to-brand-navy/60"></div>
+          
+          {/* Ledger columns (hairline sheet guide) */}
+          <div className="absolute inset-0 grid grid-cols-4 md:grid-cols-6 opacity-[0.04] pointer-events-none">
+            <div className="border-r border-white border-hairline-dark h-full"></div>
+            <div className="border-r border-white border-hairline-dark h-full"></div>
+            <div className="border-r border-white border-hairline-dark h-full"></div>
+            <div className="border-r border-white border-hairline-dark h-full"></div>
+            <div className="border-r border-white border-hairline-dark h-full"></div>
+            <div className="h-full"></div>
+          </div>
         </div>
       </div>
       
-      {/* Content - Left Aligned for reading gravity */}
-      {showText && (
-        <div className="container mx-auto px-6 relative z-10 text-white w-full">
-          <div className="max-w-3xl text-left">
-            <div className="space-y-6">
-              {/* Brand Overline */}
-              <span className="inline-block text-blue-400 font-bold uppercase tracking-widest text-xs md:text-sm">
-                S. Suresh & Associates
-              </span>
-              
-              {/* Main Headline */}
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight text-white">
-                Navigate Compliance. <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">
-                  Secure Business Growth.
-                </span>
-              </h1>
-              
-              {/* Subheading */}
-              <p className="text-lg md:text-xl text-neutral-200 font-light leading-relaxed max-w-2xl">
-                Chartered Accountants delivering professional auditing, strategic tax advisory, and digital compliance solutions tailored for enterprises in Nepal.
-              </p>
-              
-              {/* Dual CTA Buttons */}
-              <div className="pt-4 flex flex-col sm:flex-row gap-4">
-                <Link 
-                  to="/contact" 
-                  className="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 text-center hover:scale-[1.02] focus:ring-4 focus:ring-blue-500/30"
-                >
-                  Schedule Consultation
-                </Link>
-                <Link 
-                  to="/services" 
-                  className="px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-lg backdrop-blur-xs border border-white/30 transition-all duration-300 text-center hover:scale-[1.02]"
-                >
-                  Explore Services
-                </Link>
-              </div>
-
-              {/* Microcopy & Trust signals under CTA */}
-              <div className="pt-8 flex flex-wrap items-center gap-y-3 gap-x-6 text-sm text-neutral-300 border-t border-white/10 max-w-xl">
-                <div className="flex items-center gap-2">
-                  <span className="text-amber-400 text-lg">★★★★★</span>
-                  <span>10+ Years Trust</span>
-                </div>
-                <div className="hidden sm:block h-4 w-px bg-white/25"></div>
-                <div className="flex items-center gap-1.5">
-                  <svg className="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                  </svg>
-                  <span>Licensed by ICAN</span>
-                </div>
-              </div>
-            </div>
+      {/* Content */}
+      <div className="container mx-auto px-6 relative z-10 text-white w-full">
+        <div className="max-w-3xl text-left">
+          
+          {/* Eyebrow line */}
+          <span className="inline-block text-brand-gold font-sans-ui font-bold uppercase tracking-[0.25em] text-xs md:text-sm">
+            {siteConfig.firmInfo.name} • Established {siteConfig.firmInfo.establishedYear}
+          </span>
+          
+          {/* Main Serif Headline */}
+          <h1 className="font-serif-display text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.15] text-white mt-4 max-w-2xl">
+            Precision in Auditing.<br />
+            <span className="text-brand-gold">
+              Balance in Strategy.
+            </span>
+          </h1>
+          
+          {/* Checked supporting copy using ONLY the confirmed facts */}
+          <p className="font-sans-ui text-base md:text-lg text-gray-300 font-light leading-relaxed max-w-xl mt-6">
+            Licensed Chartered Accountants in Nepal delivering professional auditing, tax planning, GST filing, accounting, and financial advisory services since {siteConfig.firmInfo.establishedYear}.
+          </p>
+          
+          {/* Action CTAs */}
+          <div className="mt-10 flex flex-col sm:flex-row gap-4">
+            <Link 
+              to="/contact" 
+              className="px-8 py-4 bg-brand-gold hover:bg-white text-brand-navy font-bold text-xs tracking-wider uppercase transition-all duration-300 text-center hover:scale-[1.02] shadow-lg focus:ring-4 focus:ring-brand-gold/30"
+            >
+              Book a consultation
+            </Link>
+            <Link 
+              to="/services" 
+              className="px-8 py-4 border border-white/20 hover:border-brand-gold hover:text-brand-gold text-white font-bold text-xs tracking-wider uppercase transition-all duration-300 text-center hover:scale-[1.02]"
+            >
+              Explore Services
+            </Link>
           </div>
+          
+          {/* Dynamic Holiday Flag (preserved DNA) */}
+          {isHolidayBg && (
+            <div className="mt-8 inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/30 px-3 py-1.5 rounded-lg text-amber-400 text-xs font-semibold">
+              🎉 Celebrating dynamic seasonal themes.
+            </div>
+          )}
+          
         </div>
-      )}
+      </div>
+      
     </section>
   );
 };
