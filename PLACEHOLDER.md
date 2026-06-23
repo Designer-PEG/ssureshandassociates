@@ -35,8 +35,8 @@ The list of detailed sub-services under the 5 confirmed categories needs checkin
 - [ ] **Financial Advisory**: Verify start-up registration, FDI approvals, due diligence, and valuation reviews.
 
 ### 4. Client Testimonials
-- [ ] **Client Quote**: Replace the mock tax audit quote with a real client quote.
-- [ ] **Author & Company**: Replace `[Director of Operations]` and `[Leading Trading Corporation, Kathmandu]` with real details or obtain approval to remove.
+- [x] **Client Quote**: Replace the mock tax audit quote with a real client quote.
+- [x] **Author & Company**: Replace `[Director of Operations]` and `[Leading Trading Corporation, Kathmandu]` with real details or obtain approval to remove.
 
 ### 5. Pillars of Accountability (Trust Points)
 - [ ] **Confidentiality claims**: Verify description text.
@@ -45,10 +45,10 @@ The list of detailed sub-services under the 5 confirmed categories needs checkin
 - [ ] **Compliance Guarantee claims**: Confirm standard descriptions.
 
 ### 6. Team & Staff Directory
-- [ ] **Partner Profile**: Replace `[Partner Name]` and bio with CA. Suresh Sharma's verified details.
-- [ ] **Associate Profile**: Replace `[CA Associate Name]` and bio with operations leader details.
-- [ ] **Auditor Profile**: Replace `[Auditor Name]` and bio with staff details.
-- [ ] **Professional Credentials**: Verify ICAN / tax representation registrations.
+- [x] **Partner Profile**: Replace `[Partner Name]` and bio with CA. Suresh Sharma's verified details.
+- [x] **Associate Profile**: Replace `[CA Associate Name]` and bio with operations leader details.
+- [x] **Auditor Profile**: Replace `[Auditor Name]` and bio with staff details.
+- [x] **Professional Credentials**: Verify ICAN / tax representation registrations.
 
 ### 7. Regulatory Insights / Blog
 - [ ] **Article Templates**: Swap out draft outlines (NFRS for SMEs, FY 2082/83 tax deadlines) for real informational articles when ready, or disable block.

@@ -7,11 +7,11 @@
   --font-sans: "Inter", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", monospace;
   
-  --color-primary: #27519f; /* Deep blue from First S of logo */
-  --color-primary-dark: #193872;
+  --color-primary: #26509e; /* Blue from First S of logo */
+  --color-primary-dark: #19376d;
   --color-primary-light: #f0f4fa;
   
-  --color-brand-navy: #27519f;
+  --color-brand-navy: #0a142c; /* Deep dark contrast variant of logo blue (makes logo visible) */
   --color-brand-ivory: #FDFBF7;
   --color-brand-gold: #6cb979; /* Green from Second S of logo */
   --color-brand-gold-dark: #529d5e;
