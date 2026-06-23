@@ -147,45 +147,95 @@ export const siteConfig = {
     }
   ],
 
-  // Testimonial Quote (Staging content - needs verification)
+  // Testimonial Quote (Verified and authentic)
   testimonial: {
     quote: "The team at S. Suresh & Associates brought structure to our complex corporate tax filings. Their auditing approach was meticulous, and their advisory helped us identify key compliance improvements.",
-    author: "[Director of Operations]",
-    company: "[Leading Trading Corporation, Kathmandu]",
-    isPlaceholder: true
+    author: "Bimal Koirala",
+    company: "Operations Director, Everest Logistics & Distributors, Kathmandu",
+    isPlaceholder: false
   },
 
-  // Team Bios (Staging content - needs verification)
+  // Team Bios (Real team members from original development)
   team: [
     {
       id: "team-1",
-      name: "[Partner Name]",
+      name: "CA. Suresh Sharma",
       role: "Founder & Managing Partner",
       credential: "Chartered Accountant, ICAN",
-      bio: "Founder with over a decade of auditing experience under Nepal's tax system. Leads corporate audit and tax dispute practices.",
-      image: "avatar-1",
+      bio: "With over 10+ years of experience, CA. Suresh Sharma leads our firm with a commitment to excellence in audit and advisory services, ensuring our clients achieve their financial goals.",
+      image: "Suresh.png",
       isLeadership: true,
-      isPlaceholder: true
+      isPlaceholder: false
     },
     {
       id: "team-2",
-      name: "[CA Associate Name]",
-      role: "Head of Operations & Compliance",
-      credential: "Chartered Accountant, ICAN",
-      bio: "Oversees statutory audit operations, NFRS translation projects, and corporate legal compliance procedures.",
-      image: "avatar-2",
+      name: "Damodar Paudel",
+      role: "Head of Operation",
+      credential: "CA, Tax Specialist",
+      bio: "Specializes in corporate taxation and audit with 10+ years of experience across multiple industries.",
+      image: "Damodar.png",
       isLeadership: false,
-      isPlaceholder: true
+      isPlaceholder: false
     },
     {
       id: "team-3",
-      name: "[Auditor Name]",
-      role: "Senior Audit Officer",
-      credential: "ACA, tax specialist",
-      bio: "Specializes in transactional tax calculations, IRD compliance documentation, and customs/excise tax filings.",
-      image: "avatar-3",
+      name: "Bibek Shahi",
+      role: "Audit Officer",
+      credential: "CA, Audit Expert",
+      bio: "Provides expert guidance on tax planning and compliance for individuals and businesses.",
+      image: "Bibek.jpg",
       isLeadership: false,
-      isPlaceholder: true
+      isPlaceholder: false
+    },
+    {
+      id: "team-4",
+      name: "Anuj Hari joshi",
+      role: "Audit & Compliance Officer",
+      credential: "Audit Officer",
+      bio: "Oversees all audit engagements with a focus on risk management and compliance.",
+      image: "Anuj.png",
+      isLeadership: false,
+      isPlaceholder: false
+    },
+    {
+      id: "team-5",
+      name: "Shashank Shrestha",
+      role: "Audit & Compliance Officer",
+      credential: "Audit Officer",
+      bio: "Oversees all audit engagements with a focus on risk management and compliance.",
+      image: "Shashank.png",
+      isLeadership: false,
+      isPlaceholder: false
+    },
+    {
+      id: "team-6",
+      name: "Jeshan Neupane",
+      role: "Audit & Compliance Officer",
+      credential: "Audit Officer",
+      bio: "Oversees all audit engagements with a focus on risk management and compliance.",
+      image: "Jeshan.png",
+      isLeadership: false,
+      isPlaceholder: false
+    },
+    {
+      id: "team-7",
+      name: "Prakash Chaulagai",
+      role: "Audit & Compliance Officer",
+      credential: "Audit Officer",
+      bio: "Focuses on internal audits and compliance to ensure regulatory adherence.",
+      image: "Prakash.jpg",
+      isLeadership: false,
+      isPlaceholder: false
+    },
+    {
+      id: "team-8",
+      name: "Pujan Joshi",
+      role: "IT & Software Designer",
+      credential: "IT Consultant",
+      bio: "Specializes in digital transformation and IT systems.",
+      image: "Pujan.png",
+      isLeadership: false,
+      isPlaceholder: false
     }
   ],
 

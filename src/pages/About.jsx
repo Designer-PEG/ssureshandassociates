@@ -1,21 +1,53 @@
 import { siteConfig } from '../data/siteContent';
 
+// Import images from previous development
+import aboutHero from '../assets/about.jpg';
+import aboutIntro from '../assets/About_1.jpg';
+import SureshImg from '../assets/Suresh.png';
+import DamodarImg from '../assets/Damodar.png';
+import BibekImg from '../assets/Bibek.jpg';
+import AnujImg from '../assets/Anuj.png';
+import ShashankImg from '../assets/Shashank.png';
+import JeshanImg from '../assets/Jeshan.png';
+import PrakashImg from '../assets/Prakash.jpg';
+import PujanImg from '../assets/Pujan.png';
+
+// Team image mapping dictionary
+const imageMap = {
+  'Suresh.png': SureshImg,
+  'Damodar.png': DamodarImg,
+  'Bibek.jpg': BibekImg,
+  'Anuj.png': AnujImg,
+  'Shashank.png': ShashankImg,
+  'Jeshan.png': JeshanImg,
+  'Prakash.jpg': PrakashImg,
+  'Pujan.png': PujanImg
+};
+
 // Repeatable TeamMember Component
-const TeamMember = ({ name, role, credential, bio, isPlaceholder }) => {
+const TeamMember = ({ name, role, credential, bio, image, isPlaceholder }) => {
+  const memberPhoto = imageMap[image];
   return (
     <div className="bg-white p-6 md:p-8 border border-brand-navy/10 hover:border-brand-gold hover:shadow-lg transition-all duration-300 flex flex-col justify-between h-full relative">
       
-      {/* Visual Staging Alert */}
       {isPlaceholder && siteConfig.isStaging && (
         <span className="absolute top-4 right-4 bg-amber-500 text-slate-950 font-mono-ledger text-[8px] font-bold px-2 py-0.5 uppercase tracking-wide">
-          Staging Bio
+          Staging
         </span>
       )}
       
       <div>
-        {/* Typographic Photo Placeholder with Gold Border */}
-        <div className="w-24 h-24 bg-brand-navy border border-brand-gold flex items-center justify-center font-serif-display text-brand-gold text-2xl font-bold mb-6 mx-auto md:mx-0 shadow-md">
-          {name.charAt(0) === '[' ? 'CA' : name.charAt(0)}
+        {/* Graphic Image / Fallback block */}
+        <div className="w-28 h-36 border border-brand-gold p-1 bg-brand-ivory flex items-center justify-center font-serif-display text-brand-gold text-2xl font-bold mb-6 mx-auto md:mx-0 shadow-sm overflow-hidden">
+          {memberPhoto ? (
+            <img 
+              src={memberPhoto} 
+              alt={name} 
+              className="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-[1.03]" 
+            />
+          ) : (
+            <span>{name.charAt(0)}</span>
+          )}
         </div>
         
         {/* Name & Credentials */}
@@ -58,28 +90,25 @@ export default function About() {
     {
       year: '2019',
       title: 'Tax Advisory Scope',
-      description: '[Staging: Expanded scope to cover corporate tax compliance, corporate restructuring support, and self-assessments.]',
-      isPlaceholder: true
-    },
-    {
-      year: '2022',
-      title: 'NFRS Audits Integration',
-      description: '[Staging: Standardized auditing workflows under the newly enforced Nepal Financial Reporting Standards guidelines.]',
-      isPlaceholder: true
-    },
-    {
-      year: '2025',
-      title: 'Corporate MIS Support',
-      description: '[Staging: Began offering digital ledger consulting and customized Management Information System structuring.]',
-      isPlaceholder: true
+      description: 'Expanded scope to cover corporate tax compliance, corporate restructuring support, and self-assessments.',
+      isPlaceholder: false
     }
   ];
 
   return (
     <div className="bg-brand-ivory min-h-screen">
       
-      {/* 1. Page Header (Ledger Concept) */}
-      <section className="bg-brand-navy text-white py-20 relative">
+      {/* 1. Page Header (Ledger style with background image) */}
+      <section className="relative bg-brand-navy text-white py-20 overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            className="w-full h-full object-cover opacity-35 transform scale-100"
+            src={aboutHero}
+            alt="Suresh and Associates office header"
+          />
+          <div className="absolute inset-0 bg-brand-navy/60" />
+        </div>
+        
         <div className="max-w-7xl mx-auto px-6 z-10 relative">
           <span className="text-brand-gold font-mono-ledger font-bold uppercase tracking-[0.2em] text-xs">
             Operating Since {siteConfig.firmInfo.establishedYear}
@@ -94,7 +123,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* 2. Welcome Message */}
+      {/* 2. Welcome Message (with intro section image) */}
       <section className="py-20 border-b border-brand-navy/10">
         <div className="max-w-7xl mx-auto px-6">
           <div className="lg:grid lg:grid-cols-12 gap-12 items-center">
@@ -115,31 +144,25 @@ export default function About() {
                   Since our foundation in 2016, we have combined accounting, tax planning, GST/VAT filing, auditing, and financial advisory into a integrated service system that reinforces company operations and supports stakeholder decision-making.
                 </p>
               </div>
+              
+              <div className="mt-8 flex flex-wrap gap-4">
+                <a
+                  href="tel:+9779851135421"
+                  className="inline-flex items-center justify-center px-6 py-3 bg-brand-navy hover:bg-brand-navy/80 text-white font-bold text-xs uppercase tracking-wider transition-all duration-300"
+                >
+                  <span className="mr-2">📞</span> Call office: 9851135421
+                </a>
+              </div>
             </div>
 
-            {/* Right decorative wireframe card */}
+            {/* Right column - Reused Intro Image */}
             <div className="lg:col-span-5 mt-12 lg:mt-0">
-              <div className="border border-brand-navy/10 bg-white p-8 md:p-10 shadow-sm relative overflow-hidden flex flex-col justify-center min-h-[300px]">
-                <div className="absolute top-0 right-0 w-32 h-32 opacity-5 pointer-events-none">
-                  <div className="w-full h-full border-b border-l border-brand-navy"></div>
-                </div>
-                <span className="text-brand-gold font-mono-ledger text-sm font-bold uppercase tracking-wider block mb-2">
-                  Firm Profile Check
-                </span>
-                <ul className="space-y-4 text-xs font-sans-ui text-gray-600">
-                  <li className="flex items-center gap-3">
-                    <span className="text-brand-gold">✓</span>
-                    <span>ICAN Affiliation (Active License)</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <span className="text-brand-gold">✓</span>
-                    <span>Operating in Nepal since 2016</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <span className="text-brand-gold">✓</span>
-                    <span>Tax consultants and registered auditors</span>
-                  </li>
-                </ul>
+              <div className="border border-brand-navy/10 bg-white p-3 shadow-md relative overflow-hidden">
+                <img
+                  className="w-full rounded transition-transform duration-500 hover:scale-[1.02]"
+                  src={aboutIntro}
+                  alt="Team auditing and planning"
+                />
               </div>
             </div>
 
@@ -171,11 +194,6 @@ export default function About() {
                     <span className="font-serif-display text-lg md:text-xl font-extrabold text-brand-navy">
                       {milestone.year} — {milestone.title}
                     </span>
-                    {milestone.isPlaceholder && siteConfig.isStaging && (
-                      <span className="bg-amber-500/10 text-amber-500 text-[8px] font-mono-ledger font-bold px-1.5 py-0.5 uppercase tracking-wide border border-amber-500/20">
-                        Staging Milestone
-                      </span>
-                    )}
                   </div>
                   <p className="text-gray-600 text-xs md:text-sm leading-relaxed font-sans-ui">
                     {milestone.description}
@@ -187,7 +205,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* 4. Repeatable Team Grid */}
+      {/* 4. Team Member Grid */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
@@ -198,11 +216,6 @@ export default function About() {
               Our Professional Staff
             </h2>
             <div className="w-12 h-0.5 bg-brand-gold mx-auto my-4"></div>
-            {siteConfig.isStaging && (
-              <p className="text-xs text-amber-500 font-bold uppercase tracking-wider bg-amber-500/10 px-3.5 py-1 rounded inline-block font-mono-ledger">
-                Placeholder team profiles — Verification pending
-              </p>
-            )}
           </div>
 
           {/* Team Member Component Grid */}
@@ -214,6 +227,7 @@ export default function About() {
                 role={member.role}
                 credential={member.credential}
                 bio={member.bio}
+                image={member.image}
                 isPlaceholder={member.isPlaceholder}
               />
             ))}

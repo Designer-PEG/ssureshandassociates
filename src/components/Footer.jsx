@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { siteConfig } from '../data/siteContent';
+import Logo from '../assets/logo.png';
 
 const Footer = () => {
   return (
@@ -10,18 +11,12 @@ const Footer = () => {
           {/* Brand Column */}
           <div className="space-y-5">
             <h3 className="text-xl font-bold tracking-tight">
-              <Link to="/" className="flex items-center gap-3.5 group">
-                <div className="w-8 h-8 border border-brand-gold bg-brand-navy flex items-center justify-center font-serif-display text-brand-gold text-sm font-bold group-hover:bg-brand-gold group-hover:text-brand-navy transition-all">
-                  SS
-                </div>
-                <div className="flex flex-col">
-                  <span className="font-serif-display text-white text-base font-semibold group-hover:text-brand-gold transition-colors">
-                    {siteConfig.firmInfo.name}
-                  </span>
-                  <span className="text-[8px] text-gray-400 uppercase tracking-widest mt-0.5">
-                    {siteConfig.firmInfo.tagline}
-                  </span>
-                </div>
+              <Link to="/" className="flex items-center group">
+                <img 
+                  src={Logo} 
+                  alt="S. Suresh & Associates Logo" 
+                  className="h-8 w-auto object-contain transition-transform duration-300 hover:scale-[1.02]"
+                />
               </Link>
             </h3>
             <p className="text-gray-400 font-light leading-relaxed text-xs">

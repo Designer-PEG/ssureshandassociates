@@ -7,18 +7,18 @@
   --font-sans: "Inter", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", monospace;
   
-  --color-primary: #0F172A; /* Deep navy primary */
-  --color-primary-dark: #020617;
-  --color-primary-light: #1E293B;
+  --color-primary: #27519f; /* Deep blue from First S of logo */
+  --color-primary-dark: #193872;
+  --color-primary-light: #f0f4fa;
   
-  --color-brand-navy: #0F172A;
+  --color-brand-navy: #27519f;
   --color-brand-ivory: #FDFBF7;
-  --color-brand-gold: #C5A880;
-  --color-brand-gold-dark: #A88F65;
+  --color-brand-gold: #6cb979; /* Green from Second S of logo */
+  --color-brand-gold-dark: #529d5e;
   --color-brand-light-gray: #F1F5F9;
   
-  --color-accent: #C5A880; /* Muted gold/tan */
-  --color-neutral-dark: #1E293B;
+  --color-accent: #6cb979; /* Herbal green accent */
+  --color-neutral-dark: #111111; /* Black from A of logo */
   --color-neutral-light: #F8FAFC;
   
   --animate-fade-in-out: fadeInOut 3s ease-in-out infinite;

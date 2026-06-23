@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { siteConfig } from '../data/siteContent';
+import Logo from '../assets/logo.png';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -48,17 +49,6 @@ const Header = () => {
       {/* Fixed top header shell */}
       <div className="fixed top-0 w-full z-50 transition-all duration-300">
         
-        {/* Staging environment warning banner */}
-        {siteConfig.isStaging && (
-          <div className="bg-amber-500 text-slate-950 px-4 py-2 text-center text-xs font-bold tracking-wider shadow-inner uppercase flex items-center justify-center gap-2">
-            <span>⚠️ Staging Mode</span>
-            <span className="opacity-80 font-medium normal-case hidden sm:inline">| This site contains unverified placeholders [credentials, stats, testimonials].</span>
-            <span className="bg-slate-900 text-amber-400 px-2 py-0.5 rounded text-[10px] font-mono tracking-normal uppercase">
-              Verification Required
-            </span>
-          </div>
-        )}
-
         {/* Navbar */}
         <header 
           className={`transition-all duration-300 ${
@@ -70,22 +60,13 @@ const Header = () => {
           <div className="container mx-auto px-6">
             <div className="flex items-center justify-between">
               
-              {/* Brand Wordmark + Monogram */}
-              <Link to="/" className="flex items-center gap-3.5 group" aria-label="S. Suresh & Associates Home">
-                {/* Monogram Box */}
-                <div className="w-10 h-10 border border-brand-gold bg-brand-navy/50 flex items-center justify-center font-serif-display text-brand-gold text-lg font-bold shadow-md group-hover:bg-brand-gold group-hover:text-brand-navy transition-all duration-300">
-                  SS
-                </div>
-                
-                {/* Wordmark & Tagline */}
-                <div className="flex flex-col">
-                  <span className="font-serif-display text-white text-base md:text-lg font-semibold tracking-wide transition-colors duration-300 group-hover:text-brand-gold">
-                    {siteConfig.firmInfo.name}
-                  </span>
-                  <span className="text-[9px] text-gray-400 font-sans-ui uppercase tracking-[0.25em] font-medium mt-0.5">
-                    {siteConfig.firmInfo.tagline}
-                  </span>
-                </div>
+              {/* Brand logo image replacement */}
+              <Link to="/" className="flex items-center group" aria-label="S. Suresh & Associates Home">
+                <img 
+                  src={Logo} 
+                  alt="S. Suresh & Associates Logo" 
+                  className="h-10 md:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.02]"
+                />
               </Link>
 
               {/* Desktop Nav */}
@@ -117,7 +98,7 @@ const Header = () => {
               <div className="hidden md:flex items-center">
                 <Link 
                   to="/contact" 
-                  className="px-5 py-2.5 bg-brand-gold text-brand-navy text-xs font-bold font-sans-ui tracking-wider uppercase hover:bg-white hover:text-brand-navy transition-all duration-300 shadow-md focus:ring-2 focus:ring-brand-gold/30"
+                  className="px-5 py-2.5 bg-brand-gold text-white text-xs font-bold font-sans-ui tracking-wider uppercase hover:bg-white hover:text-brand-navy transition-all duration-300 shadow-md focus:ring-2 focus:ring-brand-gold/30"
                 >
                   Book a consultation
                 </Link>
@@ -162,12 +143,11 @@ const Header = () => {
       >
         <div className="flex justify-between items-center px-6 py-5 border-b border-white/5">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 border border-brand-gold bg-brand-navy flex items-center justify-center font-serif-display text-brand-gold text-sm font-bold">
-              SS
-            </div>
-            <span className="font-serif-display text-white text-sm font-bold">
-              {siteConfig.firmInfo.name}
-            </span>
+            <img 
+              src={Logo} 
+              alt="S. Suresh & Associates Logo" 
+              className="h-8 w-auto object-contain"
+            />
           </div>
           <button
             onClick={() => setIsOpen(false)}
@@ -204,7 +184,7 @@ const Header = () => {
           <Link 
             to="/contact"
             onClick={() => setIsOpen(false)}
-            className="block w-full py-3.5 bg-brand-gold text-brand-navy text-xs font-bold uppercase tracking-wider hover:bg-white transition-colors duration-300"
+            className="block w-full py-3.5 bg-brand-gold text-white text-xs font-bold uppercase tracking-wider hover:bg-white hover:text-brand-navy transition-colors duration-300"
           >
             Book a consultation
           </Link>
@@ -215,7 +195,7 @@ const Header = () => {
       </div>
       
       {/* Spacer to prevent page content overlap */}
-      <div className={`${siteConfig.isStaging ? 'h-32 md:h-34' : 'h-20 md:h-22'}`}></div>
+      <div className="h-20 md:h-22"></div>
     </>
   );
 };
